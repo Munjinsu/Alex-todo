@@ -187,3 +187,22 @@ html,body {height:100%;}
 	@interaction
 -------------------------------------------------------------------*/
 .todo-wrap #todo-list li button:hover::before {transform: translate(-50%, -50%) scale(1);}
+
+
+/*-------------------------------------------------------------------
+	분류이름 : weather
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+#weather {display: flex; gap: 2rem; position: absolute; top: 2rem; right: 3rem;} 
+#weather span {font-weight: 600; color: #fff; text-shadow: 3px 3px 3px rgba(0,0,0,0.5); text-transform: uppercase;}
+#weather .weather {display: flex; gap: 1rem;}
+#weather .weather i {display: flex; align-items: center; width: 3rem; height: 2.5rem; background-size: 100% 100% !important; font-size: 0; text-indent: -999px;}
+
+/*-------------------------------------------------------------------
+    @variation
+-------------------------------------------------------------------*/
+#weather .weather i.clear {background: url(../images/i_weather_clear.svg) no-repeat center center;}
+#weather .weather i.wind {background: url(../images/i_weather_wind.svg) no-repeat center center;}
+#weather .weather i.clouds {background: url(../images/i_weather_clouds.svg) no-repeat center center;}
+#weather .weather i.rain {background: url(../images/i_weather_rain.svg) no-repeat center center;}
+#weather .weather i.snow {background: url(../images/i_weather_snow.svg) no-repeat center center;}

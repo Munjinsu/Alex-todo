@@ -14,8 +14,26 @@ function onGeoOK(positon){
         .then(data => { 
             const weather = document.querySelector("#weather span:first-child");
             const city = document.querySelector("#weather span:last-child");
+            const sky = data.weather[0].main;
             
-            weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+            switch(sky){
+                case 'Clear':
+                weather.innerHTML = `<i class="clouds">${data.weather[0].main}</i> / ${data.main.temp}`;
+                break;
+                case 'Wind':
+                weather.innerHTML = `<i class="wind">${data.weather[0].main}</i> / ${data.main.temp}`;
+                break;
+                case 'Clouds':
+                weather.innerHTML = `<i class="clouds">${data.weather[0].main}</i> / ${data.main.temp}`;
+                break;
+                case 'Rain':
+                weather.innerHTML = `<i class="rain">${data.weather[0].main}</i> / ${data.main.temp}`;
+                break;
+                case 'Snow':
+                weather.innerHTML = `<i class="snow">${data.weather[0].main}</i> / ${data.main.temp}`;
+                break;
+            }
+            
             city.innerText = data.name;
         });  
 }
