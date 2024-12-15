@@ -40,4 +40,150 @@ button, input[type="button"], input[type="submit"] {cursor: pointer;}
 /* IE 10, 11의 네이티브 화살표 숨기기 */
 select::-ms-expand {display: none;}
 
-.hidden {display: none;}
+
+/*-------------------------------------------------------------------
+	분류이름 : Common
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+html,body {height:100%;}
+#container {overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 2; height: 100%;}
+
+.hidden {display: none !important;}
+
+/*-------------------------------------------------------------------
+	분류이름 : loading
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+.loading {
+    width: 100vw;
+    height: 100vh;    
+    z-index: 100;
+    background-color: #000;   
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .5s;
+}
+
+.loading .bg {  
+    width: 0;
+    background-color: #fff;
+    height: 100%;
+    position: absolute;
+    animation-timing-function: ease-in;
+}
+
+.loading .main_title {  
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading .main_title .title {text-align: center; overflow: hidden; }
+.loading .main_title .title strong {  
+    display: inline-block;
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1; /* 144px */
+    mix-blend-mode: exclusion;
+}
+
+.loading .main_title.on .title strong { animation: fadeInUp .7s .2s both linear;}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translate3d(0, 100%, 0); }
+    to { opacity: 1; transform: none; }
+}
+
+/*-------------------------------------------------------------------
+	분류이름 : login
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+#login-form {position: absolute; top: 0%; left: 0; z-index: 10; width: 100%; height: 100%; background-color: #000;}
+#login-form .login-form-inner {display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%;}
+#login-form h2 {margin-bottom: 1rem; color: #fff;}
+#login-form .input-box {position: relative;}
+#login-form #login-input {height: 5rem; background: transparent; outline: none; font-size: 4rem; color: #fff; text-align: center; opacity: .8;}
+#login-form #login-input::placeholder {color: #fff; text-transform: uppercase;}
+#login-form #login-input + .under-line {display: block; position: absolute; display: block; top: calc(100% + 1rem); left: 50%; width: 0%; height: 2px; background-color: #fff; transform: translateX(-50%); transition: width .3s;}
+
+/*-------------------------------------------------------------------
+	@interaction
+-------------------------------------------------------------------*/
+#login-form #login-input:focus + .under-line {width: 100%;}
+
+
+/*-------------------------------------------------------------------
+	분류이름 : greetin
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+.greeting-wrap #greeting-text {font-size: 3rem; color: #fff; text-shadow: 3px 3px 5px rgba(0,0,0, 0.5);}
+
+/*-------------------------------------------------------------------
+	분류이름 : clock
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+.clock-wrap #clock {font-size: 8rem; color: #fff; text-shadow: 3px 3px 10px rgba(0,0,0,0.5);}
+
+
+/*-------------------------------------------------------------------
+	분류이름 : background
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+#img-wrap {position: absolute; top: 0; left: 0; z-index: 1; width: 100%; height: 100%; filter: brightness(0.7); clip-path: circle(0% at 50% 50%); transition: clip-path 3s;}
+#img-wrap img {display: block; width: 100%; height: 100%; object-fit: cover;}
+
+/*-------------------------------------------------------------------
+    @variation
+-------------------------------------------------------------------*/
+#img-wrap.show {clip-path: circle(200% at 50% 50%);}
+
+
+/*-------------------------------------------------------------------
+	분류이름 : quotes
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+#quotes {margin-top: 5rem;}
+#quotes span {display: block; font-size: 2rem; font-weight: 600; font-style: italic; color: #fff; text-shadow: 3px 3px 10px rgba(0,0,0,0.5); text-align: center; opacity: .7;}
+#quotes span:last-child {font-size: 1.6rem;}
+
+/*-------------------------------------------------------------------
+	분류이름 : todo-list
+	분류그룹 : 레이아웃
+-------------------------------------------------------------------*/
+#todo-list-btn {position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);}
+
+.todo-wrap {position: absolute; bottom: -45rem; min-height: 50%; max-width: 40rem; width: 100%; padding: 3rem; border-radius: 30px 30px 0 0; background-color: rgba(0,0,0,0.9); transition: bottom .3s;}
+.todo-wrap #todo-list-btn {position: absolute; bottom: 100%; width: 6rem; height: 5rem; border-radius: 30px 30px 0 0 ; background: rgba(0,0,0,0.9) url(../images/i_list_btn.svg) no-repeat center center; background-size: 3.2rem 3.2rem;}
+
+.todo-wrap #todo-form {position: relative;}
+.todo-wrap #todo-form input {width: 100%; padding-bottom: .5rem; background: transparent; font-size: 2rem; color: #fff; text-align: center; outline: none;}
+.todo-wrap #todo-form input::placeholder {color: rgba(255,255,255,.6); text-transform: uppercase;}
+.todo-wrap #todo-form .under-line {display: block; position: absolute; bottom: 0; left: 50%; width: 90%; height: 2px; background-color: rgba(255,255,255,0.7); transform: translateX(-50%);} 
+.todo-wrap .scroll-box {height: 35rem; overflow-y: auto;}
+.todo-wrap .scroll-box::-webkit-scrollbar {width: 17px;}
+.todo-wrap .scroll-box::-webkit-scrollbar-thumb {height:40px; background-color: rgba(255,255,255,0.2); border-radius: 10px; background-clip: padding-box; border: 6px solid transparent;}
+.todo-wrap .scroll-box::-webkit-scrollbar-track {background-color: transparent;border-radius: 10px;}
+
+.todo-wrap #todo-list {display: flex; flex-direction: column; justify-content: center; gap: 1rem; margin-top: 3rem;}
+.todo-wrap #todo-list li {display: flex; align-items: center; justify-content: center; padding-bottom: .5rem; border-bottom: 1px dashed rgba(255,255,255,0.6);}
+.todo-wrap #todo-list li span {flex-grow: 1; text-align: center; color: #fff;}
+.todo-wrap #todo-list li button {position: relative; width: 2rem; height: 2rem; margin-left: auto; margin-right: .5rem;background: transparent url(../images/i_cancel.svg) no-repeat center; background-size: auto 100%;}
+.todo-wrap #todo-list li button::before {content: ""; position: absolute; top: 50%; left: 50%; width: calc(100% + .5rem); height: calc(100% + .5rem); border: 1px solid #fff; border-radius: 50%; transform: translate(-50%, -50%) scale(0); transition: transform .3s; transform-origin: center;}
+
+/*-------------------------------------------------------------------
+    @variation
+-------------------------------------------------------------------*/
+.todo-wrap.open {bottom: 0;}
+
+/*-------------------------------------------------------------------
+	@interaction
+-------------------------------------------------------------------*/
+.todo-wrap #todo-list li button:hover::before {transform: translate(-50%, -50%) scale(1);}

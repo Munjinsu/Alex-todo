@@ -8,17 +8,72 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="login-wrap">
-        <form id="login-form" class="hidden">
-            <input type="text" id="login-input" maxlength="15" required placeholder="what is your name">
-            <input type="submit" value="login">    
-        </form>
+
+    <div class="loading hidden">
+        <div class="bg"></div>
+        <div class="main_title">
+            <div class="title">
+                <strong>WElCOME</strong>            
+            </div>
+        </div>    
     </div>
 
-    <div class="greeting-wrap">
-        <h1 id="greeting-text" class="hidden"></h1>
+    <div id="img-wrap" data-season="4"></div> <!--  1:spring / 2:summer / 3:autumn / 4:witer -->
+    
+    <div id="container">
+        <div id="weather">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="clock-wrap">
+            <h1 id="clock">00:00:00</h1>
+        </div>
+        <div class="login-wrap">
+            <form id="login-form" class="hidden">
+                <div class="login-form-inner">
+                    <h2>Welcome to Alex To-do</h2>
+                    <div class="input-box">
+                        <input type="text" id="login-input" maxlength="15" autocomplete="off" required placeholder="what is your name ?">
+                        <span class="under-line"></span>    
+                        <input type="submit" value="login" hidden>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+        <div class="greeting-wrap">
+            <h2 id="greeting-text" class="hidden"></h2>
+        </div>
+        <div id="quotes">
+            <span></span>
+            <span></span>
+        </div>
+
+
+        
+        
+        <div class="todo-wrap">
+            <button id="todo-list-btn">
+                <span class="icon"></span>
+            </button>
+            <form id="todo-form">
+                <input type="text" placeholder="Write to Do and press Enter" required>
+                <span class="under-line"></span>
+            </form>
+            <div class="scroll-box">
+                <ul id="todo-list"></ul>
+            </div>
+            
+        </div>
+        
     </div>
 
     <script src="/js/greeting.js"></script>
+    <script src="/js/clock.js"></script>
+    <script src="/js/background.js"></script>
+    <script src="/js/quotes.js"></script>
+    <script src="/js/weather.js"></script>
+    <script src="/js/todo.js"></script>
+
 </body>
 </html>
