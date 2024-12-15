@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome ToDo</title>
 
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="login-wrap">
-        <form id="login-form">
+        <form id="login-form" class="hidden">
             <input type="text" id="login-input" maxlength="15" required placeholder="what is your name">
             <input type="submit" value="login">    
         </form>
     </div>
 
     <div class="greeting-wrap">
-        <h1 id="greeting-text"></h1>
+        <h1 id="greeting-text" class="hidden"></h1>
     </div>
 
     <script src="/js/greeting.js"></script>
